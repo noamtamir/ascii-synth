@@ -16,12 +16,14 @@ os.environ.setdefault("PYGAME_HIDE_SUPPORT_PROMPT", "1")
 import pygame
 
 SAMPLE_RATE = 22_050
+A4_FREQUENCY = 440.0
 NOTE_SECONDS = 0.5
 ATTACK_MS = 100
 RELEASE_MS = 100
 INITIAL_KEY_REPEAT_GRACE = 0.8
 KEY_REPEAT_TIMEOUT = 0.4
 KEYS = ("a", "w", "s", "e", "d", "f", "t", "g", "y", "h", "u", "j", "k")
+A4_KEY_INDEX = KEYS.index("h")
 KEYBOARD_ART = (
     "    ┌───────┬───────┐       ┌───────┬───────┬───────┐",
     "    │   W   │   E   │       │   T   │   Y   │   U   │",
@@ -118,7 +120,7 @@ def set_key_highlight(
 
 def main() -> None:
     frequencies = {
-        key: 220.0 * 2 ** (index / 12)
+        key: A4_FREQUENCY * 2 ** ((index - A4_KEY_INDEX) / 12)
         for index, key in enumerate(KEYS)
     }
     if not sys.stdin.isatty():
