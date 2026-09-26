@@ -12,6 +12,9 @@ dependencies = [
     "pygame-ce>=2.5.8",
 ]
 
+[project.urls]
+Homepage = "https://github.com/noamtamir/ascii-synth"
+
 [project.scripts]
 asynth = "piano:main"
 
