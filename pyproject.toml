@@ -1,0 +1,7 @@
+[project]
+name = "cli-synth"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = [
+    "pygame-ce>=2.5.8",
+]
