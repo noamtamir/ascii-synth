@@ -1,7 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
 [project]
-name = "cli-synth"
+name = "ascii-synth"
 version = "0.1.0"
-requires-python = ">=3.11"
+description = "A tiny terminal piano powered by pygame-ce."
+readme = "README.md"
+requires-python = ">=3.11,<3.14"
 dependencies = [
     "pygame-ce>=2.5.8",
 ]
+
+[project.scripts]
+asynth = "piano:main"
+
+[tool.setuptools]
+py-modules = ["piano"]
